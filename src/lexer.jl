@@ -18,7 +18,7 @@ function tokenize(file::IOStream)
 				push!(tokens, {"id"=>tid, "value"=>join(tmp)})
 				tid = ""
 				tmp = []
-			elseif occursin()
+			elseif occursin(join(tmp), )
 
 			elseif l == " " && tid != "char"
 				continue

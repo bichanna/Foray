@@ -1,7 +1,7 @@
 include("./lexer.jl")
 using .Lexer
 
-filename = "test.ef"
+filename = "test.qr"
 
 file = open(filename, "r")
 
