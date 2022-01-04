@@ -1,5 +1,12 @@
-module Effulgent
+include("./lexer.jl")
+using .Lexer
 
-greet() = print("Hello World!")
+filename = "test.ef"
 
-end # module
+file = open(filename, "r")
+
+tokens = tokenize(file)
+println("TOKENS:")
+println(tokens)
+
+close(file)
