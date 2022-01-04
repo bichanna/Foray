@@ -4,29 +4,34 @@ keywords = [
 	"print"
 ]
 
-function tokenize(file::IOStream)
+function tokenize(filename::String)
+	println(filename)
+	file = open(filename, "r")
 	tokens = []
 	while !eof(file)
 		tmp = []
 		tid = ""
-		
-		for l in readline
-			if l == "\"" && isempty(tmp)
+		for l in readline(file) # typeof(l) = Char
+			if l == '"' && tid == ""
 				tid = "char"
 				tmp = []
-			elseif l == "\"" && tid == "char"
-				push!(tokens, {"id"=>tid, "value"=>join(tmp)})
+			elseif l == '"' && tid == "char"
+				push!(tokens, Dict("id"=>tid, "value"=>join(tmp)))
 				tid = ""
 				tmp = []
-			elseif occursin(join(tmp), )
-
-			elseif l == " " && tid != "char"
+			elseif issubset([join(tmp)], keywords)
+				push!(tokens, Dict("id"=>"keyword", "value"=>join(tmp)))
+				tmp = []
+			elseif l == ' ' && tid != "char"
 				continue
 			else
 				push!(tmp, l)
 			end
 		end
 	end
+
+	close(file)# close file
+
 	return tokens
 end
 
