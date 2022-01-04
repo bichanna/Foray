@@ -19,6 +19,8 @@ function tokenize(filename::String)
 				push!(tokens, Dict("id"=>tid, "value"=>join(tmp)))
 				tid = ""
 				tmp = []
+			elseif l == ':'
+				push!(tokens, Dict("id"=>"label", "value"=>join(tmp)))
 			elseif issubset([join(tmp)], keywords)
 				push!(tokens, Dict("id"=>"keyword", "value"=>join(tmp)))
 				tmp = []
