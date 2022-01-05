@@ -16,7 +16,7 @@ function tokenize(filename::String)
 				tid = "char"
 				tmp = []
 			elseif l == '"' && tid == "char"
-				push!(tokens, Dict("id"=>tid, "value"=>join(tmp)))
+				push!(tokens, Dict("id"=>"string", "value"=>join(tmp)))
 				tid = ""
 				tmp = []
 			elseif l == ':'

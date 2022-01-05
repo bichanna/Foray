@@ -2,10 +2,12 @@ module Parser
 
 AST = []
 
-function add_node(parent::Dict{Any, Any}, node::Dict{Any, Any})
-	for a in AST
-		if issubset(parent, a)
-			push!(a[parent], node)
+function add_node(parent::Union{String, Dict{String, String}}, node::Dict{String, String})
+	if typeof(parent) == typeof(String)
+		for a in AST
+			if issubset(parent, a)
+				push!(a[parent], node)
+			end
 		end
 	end
 end
