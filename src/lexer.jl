@@ -5,7 +5,6 @@ keywords = [
 ]
 
 function tokenize(filename::String)
-	println(filename)
 	file = open(filename, "r")
 	tokens = []
 	while !eof(file)

@@ -13,6 +13,5 @@ println(tokens)
 AST = build_AST(tokens)
 println("AST:")
 for a in AST
-	println(typeof(a))
 	println(a)
 end
