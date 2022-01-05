@@ -4,8 +4,14 @@ AST = []
 
 function add_node(parent::Union{String, Dict{String, String}}, node::Dict{String, String})
 	for a in AST
-		if issubset(parent, a)
-			push!(a[parent], node)
+		if typeof(parent) != String
+			if issubset([parent], a)
+				push!(a[parent], node)
+			end
+		else
+			if haskey(a, parent)
+				push!(a[parent], node)
+			end
 		end
 	end
 end
@@ -36,7 +42,7 @@ function build_AST(tokens::Vector{Any})
 					collect = false
 				end
 			end
-		elseif token["id"] == "char"
+		elseif token["id"] == "string"
 			if collect == false
 				saved = token
 				collect = true
