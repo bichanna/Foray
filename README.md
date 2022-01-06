@@ -18,3 +18,12 @@ Yay! Just like Python.
 ```
 # printout "This won't be printed out"
 ```
+
+### Exit the program
+Easy poosy.
+```
+start:
+   printout "Weee!"
+   stop
+   printout "This does not show up."
+```
