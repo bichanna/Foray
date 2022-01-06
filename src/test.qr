@@ -1,6 +1,7 @@
 start:
   printout "Hello World"
-  do some_label
+  # printout "This won't be executed"
+  run some_label
 
 some_label:
   printout "Yay!"

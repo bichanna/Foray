@@ -25,6 +25,8 @@ function tokenize(filename::String)
 				tmp = []
 			elseif l == ' ' && tid != "char"
 				continue
+			elseif l == '#' && tid != "char"
+				break
 			else
 				push!(tmp, l)
 			end
