@@ -19,4 +19,5 @@ AST = build_AST(tokens)
 # 	println(a)
 # end
 
+println("OUTPUTS:")
 evaluate(AST)

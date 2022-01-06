@@ -21,17 +21,11 @@ function execute(loc::Union{Vector{Any}, Vector{String}})
 		evaluate(loc[2])
 	elseif loc[1] == "printout"
 		printout(loc[2])
-	elseif loc[1] == "stop"
-		stop()
 	end
 end
 
 function printout(value::String)
 	println(value)
-end
-
-function stop()
-	exit()
 end
 
 export evaluate

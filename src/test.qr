@@ -1,3 +1,6 @@
 start:
-printout "Hello World"
-end
+  printout "Hello World"
+  do some_label
+
+some_label:
+  printout "Yay!"
