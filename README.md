@@ -12,11 +12,3 @@ It used to be 'Effulgent', but I thought 'Querulous' is a lot better because thi
 start:
   printout "Hello World from Querulous"
 ```
-
-### Exit the program
-```
-start:
-  printout "Hello World"
-  end
-  printout "This won't be executed"
-```
