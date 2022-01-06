@@ -1,7 +1,9 @@
 start:
-  printout "Hello World"
-  # printout "This won't be executed"
+  printout "This is a test"
   run some_label
+  printout "We are back"
+  stop
+  printout "This should not show up"
 
-some_label:
-  printout "Yay!"
+# some_label:
+#  printout "In other label"

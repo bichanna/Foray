@@ -29,8 +29,8 @@ function build_AST(tokens::Vector{Any})
 				push!(AST, t)
 			end
 		elseif token["id"] == "keyword"
-			if token["value"] == "end"
-				t = Dict(token["value"]=>0)
+			if token["value"] == "stop"
+				t = Dict(token["value"]=>"")
 				add_node(parent, t)
 			else
 				if collect == false
@@ -42,7 +42,7 @@ function build_AST(tokens::Vector{Any})
 					collect = false
 				end
 			end
-		elseif token["id"] == "string"
+		elseif token["id"] == "string" || token["id"] == "atom"
 			if collect == false
 				saved = token
 				collect = true

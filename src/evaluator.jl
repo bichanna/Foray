@@ -21,6 +21,18 @@ function execute(loc::Union{Vector{Any}, Vector{String}})
 		evaluate(loc[2])
 	elseif loc[1] == "printout"
 		printout(loc[2])
+	elseif loc[1] == "stop"
+		exit()
+	elseif loc[1] == "run"
+		run_label(loc[2])
+	end
+end
+
+function run_label(v::String)
+	for node in AST
+		if issubset([v], node)
+			evaluate(node[v])
+		end
 	end
 end
 

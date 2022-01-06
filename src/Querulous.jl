@@ -10,14 +10,16 @@ using .Evaluator
 filename = "test.qr"
 
 tokens = tokenize(filename)
-# println("TOKENS:")
-# println(tokens)
+println("TOKENS:")
+for t in tokens
+	println("""	  $(t["id"]): $(t["value"])""")
+end
 
 AST = build_AST(tokens)
-# println("AST:")
-# for a in AST
-# 	println(a)
-# end
+println("AST:")
+for a in AST
+	println(a)
+end
 
 println("OUTPUTS:")
 evaluate(AST)
