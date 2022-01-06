@@ -10,6 +10,13 @@ It used to be 'Effulgent', but I thought 'Querulous' is a lot better because thi
 ### Print statement
 ```
 start:
-print "Hello World from Querulous"
-end
+  printout "Hello World from Querulous"
+```
+
+### Exit the program
+```
+start:
+  printout "Hello World"
+  end
+  printout "This won't be executed"
 ```
