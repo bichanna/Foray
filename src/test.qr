@@ -5,5 +5,5 @@ start:
   stop
   printout "This should not show up"
 
-# some_label:
-#  printout "In other label"
+some_label:
+  printout "In other label"
