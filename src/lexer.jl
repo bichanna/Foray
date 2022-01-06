@@ -1,7 +1,7 @@
 module Lexer
 
 keywords = [
-	"print"
+	"printout"
 ]
 
 function tokenize(filename::String)
