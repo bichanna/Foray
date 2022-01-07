@@ -15,11 +15,14 @@ julia Querulous.jl test.qr
 
 ## Syntax
 
+*Note:* **`stop` is mandatory at the end of `start`**
+
 ### Print statement
 Just a bit different with 'out'
 ```
 start:
   printout "Hello World from Querulous"
+  stop
 ```
 
 ### Comment
