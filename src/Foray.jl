@@ -6,8 +6,12 @@ using .Parser
 
 include("./evaluator.jl")
 using .Evaluator
-
-filename = ARGS[1]
+try
+	filename = ARGS[1]
+catch
+	printstyled("Foray: Specify a file\n"; color=:red)
+	exit()
+end
 
 tokens = tokenize(filename)
 # println("TOKENS:")
