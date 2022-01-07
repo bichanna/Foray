@@ -1,16 +1,16 @@
-# Querulous
+# Foray
 
 WARNING!! THIS LANGUAGE IS JUST A TOY AND IS IN DEVELOPMENT.
 
-It used to be 'Effulgent', but I thought 'Querulous' is a lot better because this is gonna be buggy.
+I made the foray into learning Julia on the day 2022 started, so I thought it'd be nice to name this way.
 
 ```
-git clone https://github.com/bichanna/Querulous.git
+git clone https://github.com/bichanna/Foray.git
 cd Querulous/src
 ```
-After that you can run your `.qr` file.
+After that you can run your `.fy` file.
 ```
-julia Querulous.jl test.qr
+julia Foray.jl test.fy
 ```
 
 ## Syntax
@@ -21,7 +21,7 @@ julia Querulous.jl test.qr
 Just a bit different with 'out'
 ```
 start:
-  printout "Hello World from Querulous"
+  printout "Hello World from Foray"
   stop
 ```
 
