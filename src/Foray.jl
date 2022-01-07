@@ -7,7 +7,7 @@ using .Parser
 include("./evaluator.jl")
 using .Evaluator
 try
-	filename = ARGS[1]
+	global filename = ARGS[1]
 catch
 	printstyled("Foray: Specify a file\n"; color=:red)
 	exit()
