@@ -6,7 +6,7 @@ I made the foray into learning Julia on the day 2022 started, so I thought it'd 
 
 ```
 git clone https://github.com/bichanna/Foray.git
-cd Querulous/src
+cd Foray/src
 ```
 After that you can run your `.fy` file.
 ```
