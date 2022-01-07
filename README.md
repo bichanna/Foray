@@ -32,7 +32,17 @@ Yay! Just like Python.
 Easy poosy.
 ```
 start:
-   printout "Weee!"
-   stop
-   printout "This does not show up."
+  printout "Weee!"
+  stop
+  printout "This does not show up."
+```
+
+### Function(?)
+🤔 Python without def
+```
+start:
+  run something
+  printout "This will be printed out after"
+something:
+  printout "Yay"
 ```
