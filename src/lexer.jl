@@ -31,7 +31,7 @@ function tokenize(filename::String)
 					push!(tokens, Dict("id"=>"atom", "value"=>join(tmp)))
 					tmp = []
 				end
-			elseif l == ' ' && tid != "char"
+			elseif (l == ' ' || l == '\t') && tid != "char"
 				continue
 			elseif l == "\t" && tid != "char"
 				continue
