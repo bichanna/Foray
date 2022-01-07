@@ -34,5 +34,5 @@ AST = build_AST(tokens)
 # 	println(a)
 # end
 
-println("\nOUTPUTS:")
+println("OUTPUTS:")
 evaluate(AST, true)
