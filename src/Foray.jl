@@ -15,7 +15,7 @@ catch
 	exit()
 end
 
-extension = filename[length(filename)-2] * filename[length(filename)-1] * filename[length(filename)]
+extension = filename[end-2] * filename[end-1] * filename[end]
 if extension != ".fy"
 	printstyled("Foray: Specify a file with .fy extension\n"; color=:red)
 	exit()
