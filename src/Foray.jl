@@ -6,10 +6,18 @@ using .Parser
 
 include("./evaluator.jl")
 using .Evaluator
+
+
 try
 	global filename = ARGS[1]
 catch
 	printstyled("Foray: Specify a file\n"; color=:red)
+	exit()
+end
+
+extension = filename[length(filename)-2] * filename[length(filename)-1] * filename[length(filename)]
+if extension != ".fy"
+	printstyled("Foray: Specify a file with .fy extension\n"; color=:red)
 	exit()
 end
 
