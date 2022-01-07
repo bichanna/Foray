@@ -2,7 +2,11 @@ module Evaluator
 
 AST = []
 
-function evaluate(node::Union{Vector{Any}, Dict{String, String}})
+function evaluate(node::Union{Vector{Any}, Dict{String, String}}, keep::Bool=false)
+	if keep
+		global AST = node
+	end
+
 	if isa(node, Vector{Any})
 		for n in node
 			for (k, v) in n
@@ -30,7 +34,7 @@ end
 
 function run_label(v::String)
 	for node in AST
-		if issubset([v], node)
+		if haskey(node, v)
 			evaluate(node[v])
 		end
 	end

@@ -23,4 +23,4 @@ AST = build_AST(tokens)
 # end
 
 println("\nOUTPUTS:")
-evaluate(AST)
+evaluate(AST, true)
