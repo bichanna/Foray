@@ -21,7 +21,7 @@ function evaluate(node::Union{Vector{Any}, Dict{String, String}}, keep::Bool=fal
 end
 
 function execute(loc::Union{Vector{Any}, Vector{String}})
-	if isa(loc[2], Vector{Any})
+	if isa(loc[2], Vector{Any}) && loc[1] == "start"
 		evaluate(loc[2])
 	elseif loc[1] == "printout"
 		printout(loc[2])
