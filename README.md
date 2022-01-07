@@ -43,10 +43,11 @@ start:
 ### Function(?)
 🤔 Python without def
 ```
+something:
+  printout "Yay"
+
 start:
   run something
   printout "This will be printed out after"
   stop
-something:
-  printout "Yay"
 ```
