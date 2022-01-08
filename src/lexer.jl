@@ -26,14 +26,15 @@ function tokenize(filename::String)
 			elseif issubset([join(tmp)], keywords)
 				push!(tokens, Dict("id"=>"keyword", "value"=>join(tmp)))
 				tmp = []
+			elseif l == '='
+				push!(tokens, Dict("id"=>"var", "value"=>join(tmp)))
+				tmp = []
 			elseif l == '\n'
 				if length(tmp) > 0
 					push!(tokens, Dict("id"=>"atom", "value"=>join(tmp)))
 					tmp = []
 				end
 			elseif (l == ' ' || l == '\t') && tid != "char"
-				continue
-			elseif l == "\t" && tid != "char"
 				continue
 			elseif l == '#' && tid != "char"
 				break

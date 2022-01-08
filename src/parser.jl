@@ -28,7 +28,7 @@ function build_AST(tokens::Vector{Any})
 				parent = token["value"]
 				push!(AST, t)
 			end
-		elseif token["id"] == "keyword"
+		elseif token["id"] == "keyword" || token["id"] == "var"
 			if token["value"] == "stop"
 				t = Dict(token["value"]=>"")
 				add_node(parent, t)
