@@ -15,29 +15,17 @@ julia Foray.jl test.fyy
 
 ## Syntax
 
-*Note:* **`stop` is mandatory at the end of `start`**
-
 ### Print statement
 Just a bit different with 'out'
 ```
 start:
   printout "Hello World from Foray"
-  stop
 ```
 
 ### Comment
 Yay! Just like Python.
 ```
 # printout "This won't be printed out"
-```
-
-### Exit the program
-Easy poosy.
-```
-start:
-  printout "Weee!"
-  stop
-  printout "This does not show up."
 ```
 
 ### Function(?)
@@ -49,5 +37,13 @@ something:
 start:
   run something
   printout "This will be printed out after"
+```
+
+### Exit the program
+Easy poosy.
+```
+start:
+  printout "Weee!"
   stop
+  printout "This does not show up."
 ```

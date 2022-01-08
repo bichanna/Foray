@@ -3,5 +3,9 @@ something:
 
 start:
 	run something
-  printout "This will be printed out after"
-  stop
+  printout "This will be printed out after something func"
+  run another
+  
+
+another:
+  printout "Hello World from another function"
