@@ -1,4 +1,7 @@
-# Foray
+<div align="center">
+    <img width="115px" src="https://user-images.githubusercontent.com/60306074/148629691-9a17fed9-e188-4116-a950-3f0687d9d9a0.png">
+    <h1>The Foray Programming Language</h1>
+</div>
 
 WARNING!! THIS LANGUAGE IS JUST A TOY AND IS IN DEVELOPMENT.
 
