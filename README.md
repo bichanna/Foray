@@ -5,7 +5,7 @@
 
 WARNING!! THIS LANGUAGE IS JUST A TOY AND IS IN DEVELOPMENT.
 
-I made the foray into learning Julia on the day 2022 started, so I thought it'd be nice to name this way.
+I made the foray into Julia on the day 2022 started.
 
 ```
 git clone https://github.com/bichanna/Foray.git
