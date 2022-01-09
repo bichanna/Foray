@@ -1,0 +1,3 @@
+start:
+  str = "This is a variable"
+  printout str

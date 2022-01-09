@@ -1,0 +1,5 @@
+start:
+	run func
+
+func:
+	printout "Hello"
