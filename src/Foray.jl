@@ -11,22 +11,29 @@ function printout_error(text::String)
 	printstyled("Foray: $text\n"; color=:red)
 end
 
-try
-	global filename = ARGS[1]
-catch
-	printout_error("Specify a file")
+function show_usage()
+	println("Usage:")
+	println("	julia Foray.jl <filename>.fyy")
+end
+
+if length(ARGS) < 1
+	show_usage()
 	exit()
+else
+	global filename = ARGS[1]
 end
 
 try
 	global extension = filename[end-3] * filename[end-2] * filename[end-1] * filename[end]
 catch
 	printout_error("Foray: Specify a file with .fyy extension")
+	show_usage()
 	exit()
 end
 
 if extension != ".fyy"
 	printout_error("Specify a file with .fyy extension")
+	show_usage()
 	exit()
 end
 
