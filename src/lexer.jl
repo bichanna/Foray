@@ -6,7 +6,7 @@ keywords = [
 	"run",
 ]
 
-vars = []
+vars = Dict()
 
 function tokenize(filename::String)
 	file = open(filename, "r")
@@ -14,14 +14,21 @@ function tokenize(filename::String)
 	while !eof(file)
 		tmp = []
 		tid = ""
+		isvar = false
+		varkey = ""
 		for l in readline(file, keep=true) # typeof(l) = Char
 			if l == '"' && tid == ""
 				tid = "char"
 				tmp = []
 			elseif l == '"' && tid == "char"
 				push!(tokens, Dict("id"=>"string", "value"=>join(tmp)))
+				if isvar == true
+					vars[varkey] = join(tmp)
+				end
 				tid = ""
 				tmp = []
+			elseif haskey(vars, join(tmp))
+				push!(tokens, Dict("id"=>"string", "value"=>vars[join(tmp)]))
 			elseif l == ':'
 				push!(tokens, Dict("id"=>"label", "value"=>join(tmp)))
 				tmp = []
@@ -31,7 +38,9 @@ function tokenize(filename::String)
 			elseif l == '='
 				push!(tokens, Dict("id"=>"var", "value"=>join(tmp)))
 				push!(tokens, Dict("id"=>"alloc", "value"=>"eq"))
-				push!(vars, join(tmp))
+				vars[join(tmp)] = ""
+				isvar = true
+				varkey = join(tmp)
 				tmp = []
 			elseif l == '\n'
 				if length(tmp) > 0
@@ -53,5 +62,5 @@ function tokenize(filename::String)
 	return tokens
 end
 
-export tokenize, vars
+export tokenize
 end # module

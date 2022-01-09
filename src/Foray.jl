@@ -38,9 +38,8 @@ tokens = tokenize(filename)
 
 AST = build_AST(tokens)
 # println("AST:")
-# println(AST)
 # for a in AST
-# 	println(a)
+# 	println("	$a")
 # end
 
 # println("OUTPUTS:")
