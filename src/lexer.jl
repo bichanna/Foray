@@ -6,6 +6,8 @@ keywords = [
 	"run",
 ]
 
+vars = []
+
 function tokenize(filename::String)
 	file = open(filename, "r")
 	tokens = []
@@ -28,6 +30,8 @@ function tokenize(filename::String)
 				tmp = []
 			elseif l == '='
 				push!(tokens, Dict("id"=>"var", "value"=>join(tmp)))
+				push!(tokens, Dict("id"=>"alloc", "value"=>"eq"))
+				push!(vars, join(tmp))
 				tmp = []
 			elseif l == '\n'
 				if length(tmp) > 0
@@ -49,5 +53,5 @@ function tokenize(filename::String)
 	return tokens
 end
 
-export tokenize
+export tokenize, vars
 end # module
