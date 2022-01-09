@@ -18,11 +18,22 @@ julia Foray.jl test.fyy
 
 ## Syntax
 
+*Note:* **Currently Foray only supports string.**<br>
+*Note:* **Make sure to add an extra line at the end of the file.**
+
 ### Print statement
 Just a bit different with 'out'
 ```
 start:
   printout "Hello World from Foray"
+```
+
+### Variables
+Similar to Python
+```
+start:
+  variable = "Hello World from a variable"
+  printout variable
 ```
 
 ### Comment
