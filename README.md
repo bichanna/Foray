@@ -19,7 +19,8 @@ julia Foray.jl test.fyy
 ## Syntax
 
 *Note:* **Currently Foray only supports string.**<br>
-*Note:* **Make sure to add an extra line at the end of the file.**
+*Note:* **Make sure to add an extra line at the end of the file.**<br>
+*Note:* **Always place the start function at the top of the file**
 
 ### Print statement
 Just a bit different with 'out'
