@@ -3,7 +3,7 @@
     <h1>The Foray Programming Language</h1>
 </div>
 
-WARNING!! THIS LANGUAGE IS JUST A TOY LANGUAGE.
+WARNING!! THIS LANGUAGE IS JUST A TOY.
 
 I made the foray into Julia on the day 2022 started.
 
